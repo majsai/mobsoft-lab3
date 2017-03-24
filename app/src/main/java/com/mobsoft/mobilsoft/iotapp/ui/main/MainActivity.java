@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.mobsoft.mobilsoft.iotapp.MobSoftApplication;
 import com.mobsoft.mobilsoft.iotapp.R;
 
 import javax.inject.Inject;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MobSoftApplication.injector.inject(this);
     }
 
     @Override
