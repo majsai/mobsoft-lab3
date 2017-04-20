@@ -5,6 +5,7 @@ package com.mobsoft.mobilsoft.iotapp;
  */
 import com.mobsoft.mobilsoft.iotapp.interactor.InteractorModule;
 import com.mobsoft.mobilsoft.iotapp.interactor.iot.IoTInteractor;
+import com.mobsoft.mobilsoft.iotapp.interactor.user.UserInteractor;
 import com.mobsoft.mobilsoft.iotapp.repository.RepositoryModule;
 import com.mobsoft.mobilsoft.iotapp.ui.UIModule;
 import com.mobsoft.mobilsoft.iotapp.ui.login.LoginActivity;
@@ -24,5 +25,6 @@ public interface MobSoftApplicationComponent {
     void inject(MapActivity mapA);
 
     void inject(IoTInteractor ioTInteractor);
+    void inject(UserInteractor userInteractor);
 
 }

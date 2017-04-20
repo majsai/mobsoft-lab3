@@ -1,6 +1,9 @@
 package com.mobsoft.mobilsoft.iotapp.ui.main;
 
+import com.mobsoft.mobilsoft.iotapp.interactor.iot.IoTInteractor;
 import com.mobsoft.mobilsoft.iotapp.ui.Presenter;
+
+import javax.inject.Inject;
 
 /**
  * Created by mobsoft on 2017. 03. 24..
@@ -8,6 +11,8 @@ import com.mobsoft.mobilsoft.iotapp.ui.Presenter;
 
 public class MainPresenter extends Presenter<MainScreen> {
 
+    @Inject
+    IoTInteractor ioTInteractor;
 
     public MainPresenter() {
     }
