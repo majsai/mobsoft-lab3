@@ -5,6 +5,8 @@ import android.content.Context;
 import com.mobsoft.mobilsoft.iotapp.model.SensorNode;
 import com.mobsoft.mobilsoft.iotapp.model.User;
 
+import java.util.List;
+
 /**
  * Created by mobsoft on 2017. 04. 07..
  */
@@ -19,4 +21,6 @@ public interface Repository {
     public void addNode(SensorNode node);
 
     public SensorNode getNodeInfo(SensorNode node);
+
+    List<SensorNode> getNodes();
 }

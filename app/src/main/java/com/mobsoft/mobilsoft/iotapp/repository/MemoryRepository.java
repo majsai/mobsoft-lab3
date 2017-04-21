@@ -5,6 +5,8 @@ import android.content.Context;
 import com.mobsoft.mobilsoft.iotapp.model.SensorNode;
 import com.mobsoft.mobilsoft.iotapp.model.User;
 
+import java.util.List;
+
 /**
  * Created by mobsoft on 2017. 04. 07..
  */
@@ -32,6 +34,11 @@ public class MemoryRepository implements Repository {
 
     @Override
     public SensorNode getNodeInfo(SensorNode node) {
+        return null;
+    }
+
+    @Override
+    public List<SensorNode> getNodes() {
         return null;
     }
 }

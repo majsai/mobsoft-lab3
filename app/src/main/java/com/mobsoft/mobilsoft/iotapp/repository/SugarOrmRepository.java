@@ -6,6 +6,8 @@ import com.mobsoft.mobilsoft.iotapp.model.SensorNode;
 import com.mobsoft.mobilsoft.iotapp.model.User;
 import com.orm.SugarContext;
 
+import java.util.List;
+
 /**
  * Created by mobsoft on 2017. 04. 07..
  */
@@ -33,6 +35,11 @@ public class SugarOrmRepository implements Repository {
 
     @Override
     public SensorNode getNodeInfo(SensorNode node) {
+        return null;
+    }
+
+    @Override
+    public List<SensorNode> getNodes() {
         return null;
     }
 }

@@ -3,8 +3,11 @@ package com.mobsoft.mobilsoft.iotapp.interactor.iot;
 import com.mobsoft.mobilsoft.iotapp.MobSoftApplication;
 import com.mobsoft.mobilsoft.iotapp.interactor.iot.events.AddNodeEvent;
 import com.mobsoft.mobilsoft.iotapp.interactor.iot.events.GetNodeInfoEvent;
+import com.mobsoft.mobilsoft.iotapp.interactor.iot.events.GetNodesEvent;
 import com.mobsoft.mobilsoft.iotapp.model.SensorNode;
 import com.mobsoft.mobilsoft.iotapp.repository.Repository;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -39,6 +42,17 @@ public class IoTInteractor {
             SensorNode returnNode = repository.getNodeInfo(node);
 
             GetNodeInfoEvent event = new GetNodeInfoEvent(returnNode);
+            bus.post(event);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getNodes() {
+        try{
+            List<SensorNode> nodeList = repository.getNodes();
+
+            GetNodesEvent event = new GetNodesEvent(nodeList);
             bus.post(event);
         } catch(Exception e) {
             e.printStackTrace();

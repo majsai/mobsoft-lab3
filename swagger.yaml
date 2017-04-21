@@ -58,7 +58,7 @@ paths:
       responses:
         200:
           schema:
-            $ref: '#/definitions/SensorInfo'
+            $ref: '#/definitions/Sensor'
           description: Information from the sensor
         403:
           schema:
@@ -109,22 +109,15 @@ definitions:
         type: string
       password:
         type: string
-  SensorInfo:
-    type: object
-    properties:
-      temperature:
-        type: number
-      humidity:
-        type: number
-      longitude:
-        type: number
-      latitude:
-        type: number
   Sensor:
     type: object
     properties:
       name:
         type: string
+      temperature:
+        type: number
+      humidity:
+        type: number
       longitude:
         type: number
       latitude:
