@@ -18,6 +18,19 @@ produces:
   - application/json
 paths:
   /node:
+    get:
+      summary: Get all nodes for this user
+      security:
+        - Bearer: []
+      tags:
+        - Node
+      responses:
+        200:
+          description: Sensors found
+          schema:
+            type: array
+            items:
+                $ref: '#/definitions/Sensor'
     post:
       security:
         - Bearer: []
