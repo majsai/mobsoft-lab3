@@ -1,0 +1,141 @@
+swagger: '2.0'
+info:
+  title: eParaszt
+  version: "1.0.0"
+
+# array of all schemes that your API supports
+schemes:
+  - https
+# security definitions
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+# will be prefixed to all paths
+basePath: /api
+produces:
+  - application/json
+paths:
+  /node:
+    post:
+      security:
+        - Bearer: []
+      summary: Create new sensor
+      consumes:
+        - application/json
+      parameters:
+        - name: sensor
+          in: body
+          schema:
+            $ref: '#/definitions/Sensor'
+      tags:
+        - Node
+      responses:
+        201:
+          description: Sensor added
+        403:
+          schema:
+            $ref: '#/definitions/Error'
+          description: Could not be authenticated
+        default:
+          schema:
+            $ref: '#/definitions/Error'
+          description: Unknown error
+
+  /node/{nodename}:
+    get:
+      security:
+        - Bearer: []
+      summary: Getting sensor information for a node
+      parameters:
+        - name: nodename
+          in: path
+          required: true
+          type: string
+      tags:
+        - Node
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/SensorInfo'
+          description: Information from the sensor
+        403:
+          schema:
+            $ref: '#/definitions/Error'
+          description: Could not be authenticated
+        default:
+          schema:
+            $ref: '#/definitions/Error'
+          description: Unknown error
+  /auth:
+    post:
+      security:
+        - Bearer: []
+      summary: Authenticate the user
+      consumes:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          schema:
+            $ref: '#/definitions/User'
+          description: The user's login name
+      tags:
+        - User
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/AuthToken'
+          description: Successful authentication
+        403:
+          schema:
+            $ref: '#/definitions/Error'
+          description: Could not be authenticated
+        default:
+          description: Could not authenticate
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  AuthToken:
+    type: object
+    properties:
+      token:
+        type: string
+  User:
+    type: object
+    properties:
+      name:
+        type: string
+      password:
+        type: string
+  SensorInfo:
+    type: object
+    properties:
+      temperature:
+        type: number
+      humidity:
+        type: number
+      longitude:
+        type: number
+      latitude:
+        type: number
+  Sensor:
+    type: object
+    properties:
+      name:
+        type: string
+      longitude:
+        type: number
+      latitude:
+        type: number
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
