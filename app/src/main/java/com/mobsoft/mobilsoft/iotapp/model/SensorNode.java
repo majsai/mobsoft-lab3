@@ -1,13 +1,15 @@
 package com.mobsoft.mobilsoft.iotapp.model;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Table;
 
 /**
  * Created by mobsoft on 2017. 04. 07..
  */
 
-public class SensorNode extends SugarRecord {
-    private Long id;
+@Table
+public class SensorNode {
+    private Long id = null;
 
     private String name;
 
@@ -30,12 +32,10 @@ public class SensorNode extends SugarRecord {
         this.humidity = humidity;
     }
 
-    @Override
     public Long getId(){
         return id;
     }
 
-    @Override
     public void setId(Long id){
         this.id = id;
     }

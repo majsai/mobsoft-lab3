@@ -5,4 +5,5 @@ package com.mobsoft.mobilsoft.iotapp.ui.map;
  */
 
 public interface MapScreen {
+    void showMessage(String text);
 }

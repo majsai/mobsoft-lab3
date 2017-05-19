@@ -10,6 +10,7 @@ import java.util.List;
 
 public class GetNodesEvent {
     private List<SensorNode> sensors;
+    private Throwable throwable;
 
     public GetNodesEvent(List<SensorNode> sensors) {
         this.sensors = sensors;
@@ -21,5 +22,9 @@ public class GetNodesEvent {
 
     public void setSensors(List<SensorNode> sensors) {
         this.sensors = sensors;
+    }
+
+    public Throwable getThrowable() {
+        return throwable;
     }
 }

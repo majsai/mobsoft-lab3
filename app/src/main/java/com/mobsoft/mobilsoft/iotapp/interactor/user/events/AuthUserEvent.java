@@ -9,6 +9,7 @@ import com.mobsoft.mobilsoft.iotapp.model.User;
 public class AuthUserEvent {
     private boolean authSuccess;
     private User user;
+    private Throwable throwable;
 
     public AuthUserEvent(boolean authSuccess, User user) {
         this.authSuccess = authSuccess;
@@ -29,5 +30,9 @@ public class AuthUserEvent {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Throwable getThrowable() {
+        return throwable;
     }
 }

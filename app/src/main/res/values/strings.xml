@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IotApp</string>
+    <string name="get_nodes">Get sensor nodes</string>
 </resources>

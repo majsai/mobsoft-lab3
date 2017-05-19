@@ -5,4 +5,5 @@ package com.mobsoft.mobilsoft.iotapp.ui.login;
  */
 
 public interface LoginScreen {
+    void showMessage(String text);
 }
