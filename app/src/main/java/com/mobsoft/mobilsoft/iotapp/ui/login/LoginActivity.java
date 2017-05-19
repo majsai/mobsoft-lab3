@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements LoginScreen {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginPresenter.authUser(ed1.getText().toString(), ed2.getText().toString());
+                //loginPresenter.authUser(ed1.getText().toString(), ed2.getText().toString());
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
 

@@ -38,6 +38,7 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.mobsoft.mobilsoft.iotapp.model"/>
 
+
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDe28cTwRybBt3Vg0SzFTubLNdu5KV4GLc"/>
 
         <activity android:name=".ui.main.MainActivity">
